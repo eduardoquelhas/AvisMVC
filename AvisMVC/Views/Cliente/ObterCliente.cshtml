@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AvisMVC.Models.Cliente>
+
+<p>
+    @Html.ActionLink("Incluir Registro", "IncluirTime")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditarTime", new { id=item.ClienteID }) |
+            @Html.ActionLink("Details", "EditarTime", new { id=item.ClienteID }) |
+            @Html.ActionLink("Delete", "ExcluirCliente", new { id=item.ClienteID })
+        </td>
+    </tr>
+}
+
+</table>
